@@ -5,11 +5,6 @@ OPIS:
     Ten przykład pokazuje, jak rozpoznawać dane osobowe (PII) w zbiorze dokumentów.
     Endpoint recognize_pii_entities jest dostępny tylko dla wersji API v3.1 i nowszych.
 
-    W tym przykładzie wcielamy się w firmę obsługującą płatności kredytowe. Aby przestrzegać
-    wytycznych dotyczących prywatności, musimy zanonimizować wszystkie dane przed ich upublicznieniem.
-
-    Więcej informacji w dokumentacji usługi: https://aka.ms/azsdk/language/pii
-
 UŻYCIE:
     python sample_recognize_pii_entities.py
 
@@ -18,6 +13,8 @@ UŻYCIE:
     2) uwierzytelnij się do zasobu poprzez "az login" - jeśli polecenie nie działa, zainstaluj az, zrestartuj terminal i sprawdź jeszcze raz
     
 Więcej info: 
+
+https://aka.ms/azsdk/language/pii
 https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/how-to/redact-text-pii
 https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories
 https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list
