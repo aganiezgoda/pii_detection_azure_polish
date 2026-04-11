@@ -1,16 +1,16 @@
 """
-PLIK: sample_recognize_pii_entities_pl.py
 
 OPIS:
     Ten przykład pokazuje, jak rozpoznawać dane osobowe (PII) w zbiorze dokumentów.
     Endpoint recognize_pii_entities jest dostępny tylko dla wersji API v3.1 i nowszych.
 
 UŻYCIE:
-    python sample_recognize_pii_entities.py
 
     Ustaw zmienne środowiskowe na własne wartości przed uruchomieniem przykładu:
-    1) AZURE_LANGUAGE_ENDPOINT - endpoint do zasobu Language.
+    1) AZURE_LANGUAGE_ENDPOINT - ustaw endpoint do zasobu Language poniżej
     2) uwierzytelnij się do zasobu poprzez "az login" - jeśli polecenie nie działa, zainstaluj az, zrestartuj terminal i sprawdź jeszcze raz
+
+    python recognizepiientities_pl_clean.py albo ikonką "uruchom" po wejściu w plik
     
 Więcej info: 
 
