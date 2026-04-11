@@ -82,3 +82,17 @@ def sample_recognize_pii_entities() -> None:
 
 if __name__ == '__main__':
     sample_recognize_pii_entities()
+
+
+"""
+Przykładowy output:
+
+Oryginalny tekst: Jestem Anna Nowak.
+        Mój numer telefonu to 31256032344 a PESEL 86042146381. 
+        Można się ze mną skontaktować też pisząc na: anowak@microsoft.com.
+Zredagowany tekst: Jestem **********.
+        Mój numer telefonu to *********** a PESEL ***********. 
+        Można się ze mną skontaktować też pisząc na: ********************.
+Powyżej zanonimizowane zostały dane wrażliwe zidentyfikowane z >= 60% pewności
+Nie zidentyfikowano dodatkowych danych z pewnością < 60%.
+"""
