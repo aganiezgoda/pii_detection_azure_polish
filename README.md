@@ -47,6 +47,37 @@ The Azure Language Service can detect various PII categories including:
 - Azure CLI installed and configured
 
 ### Required Python Packages
+
+The repository includes a `requirements.txt` file listing all required dependencies:
+
+```
+azure-ai-textanalytics>=5.3.0
+azure-identity>=1.15.0
+```
+
+#### Recommended: install into a virtual environment
+
+```powershell
+# Create and activate a virtual environment (Windows PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# Upgrade pip and install dependencies from requirements.txt
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+On macOS / Linux:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Alternatively, you can install the packages directly without `requirements.txt`:
+
 ```bash
 pip install azure-ai-textanalytics azure-identity
 ```

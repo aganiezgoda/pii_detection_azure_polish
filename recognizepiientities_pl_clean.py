@@ -6,9 +6,12 @@ OPIS:
 
 UŻYCIE:
 
-    Ustaw zmienne środowiskowe na własne wartości przed uruchomieniem przykładu:
-    1) AZURE_LANGUAGE_ENDPOINT - ustaw endpoint do zasobu Language poniżej
-    2) uwierzytelnij się do zasobu poprzez "az login" - jeśli polecenie nie działa, zainstaluj az, zrestartuj terminal i sprawdź jeszcze raz
+    Przed uruchomieniem przykładu:
+    1) Edytuj poniższą zmienną `endpoint` i wpisz endpoint swojego zasobu Azure Language
+       (znajdziesz go w portalu Azure: zasób Language → Keys and Endpoint).
+       Format: https://NAZWA-ZASOBU.cognitiveservices.azure.com/
+    2) Uwierzytelnij się do zasobu poprzez "az login" - jeśli polecenie nie działa,
+       zainstaluj Azure CLI, zrestartuj terminal i spróbuj ponownie.
 
     python recognizepiientities_pl_clean.py albo ikonką "uruchom" po wejściu w plik
     
@@ -27,7 +30,7 @@ def sample_recognize_pii_entities() -> None:
     from azure.identity import DefaultAzureCredential
     from azure.ai.textanalytics import TextAnalyticsClient
 
-    endpoint = "https://llm-proc-language-eastus-4w7ou.cognitiveservices.azure.com/" #dodaj swoje połączenie z portalu po stworzeniu usługi
+    endpoint = "https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com/"  # zastąp nazwą swojego zasobu z portalu Azure
 
     text_analytics_client = TextAnalyticsClient(
         endpoint=endpoint, credential=DefaultAzureCredential(),
