@@ -27,7 +27,7 @@ def sample_recognize_pii_entities() -> None:
     from azure.identity import DefaultAzureCredential
     from azure.ai.textanalytics import TextAnalyticsClient
 
-    endpoint = "https://[dodaj swoją usługę tutaj].cognitiveservices.azure.com/" #dodaj swoje połączenie z portalu po stworzeniu usługi
+    endpoint = "https://llm-proc-language-eastus-4w7ou.cognitiveservices.azure.com/" #dodaj swoje połączenie z portalu po stworzeniu usługi
 
     text_analytics_client = TextAnalyticsClient(
         endpoint=endpoint, credential=DefaultAzureCredential(),
