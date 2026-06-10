@@ -12,6 +12,40 @@ This script (`recognizepiientities_pl_clean.py`) shows how to:
 
 **Use Case**: A payment processing company needs to anonymize sensitive data before making it public, in compliance with privacy guidelines.
 
+## Deployment Options
+
+Azure PII detection can be consumed in **two main modes**, so you can choose the one that fits your security, compliance, and infrastructure needs. The script in this repository uses the **cloud (hosted) mode**, but the same API is available in containers.
+
+### 1. Cloud (hosted Azure AI Language Service)
+
+The PII detection model runs in Microsoft-managed infrastructure and is called over a REST endpoint (this is what `recognizepiientities_pl_clean.py` does). No infrastructure to manage — you only need a Language resource and its endpoint/credentials.
+
+### 2. Docker containers (run on your own infrastructure)
+
+Azure provides PII detection as a **Linux Docker container** so you can host the same API close to your data — useful when security or data-governance requirements prevent you from sending data to the cloud. The container image is published on the Microsoft Container Registry:
+
+```bash
+docker pull mcr.microsoft.com/azure-cognitive-services/textanalytics/pii:latest
+```
+
+Containers can be deployed to a variety of hosts:
+
+| Host / Target | Description |
+|---------------|-------------|
+| Local / on-premises Docker host | Any x64 host running Docker (Linux containers) |
+| [Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/) | Managed Kubernetes for scalable, orchestrated deployments |
+| [Azure Container Instances (ACI)](https://learn.microsoft.com/en-us/azure/container-instances/) | Serverless containers without managing VMs |
+| [Kubernetes on Azure Stack](https://learn.microsoft.com/en-us/azure-stack/user/azure-stack-solution-template-kubernetes-deploy) | Hybrid / edge deployments |
+
+Containers run in one of two connectivity modes:
+
+- **Connected containers** — run on your infrastructure but must reach Azure periodically (every 10–15 min) to send billing/metering data. Requires `Eula=accept`, `Billing={ENDPOINT_URI}`, and `ApiKey={API_KEY}`.
+- **Disconnected containers** — run fully offline in air-gapped environments. Requires prior approval (application) and a commitment (purchase) plan, plus a downloaded license file.
+
+> **Note**: Azure AI containers process data locally and do **not** send the analyzed text to Microsoft, but (except in the approved disconnected scenario) they must stay connected to Azure for metering/billing.
+
+📖 More: [Install and run PII detection containers](https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/how-to/use-containers) · [What are Azure AI containers?](https://learn.microsoft.com/en-us/azure/ai-services/cognitive-services-container-support) · [Disconnected containers](https://learn.microsoft.com/en-us/azure/ai-services/containers/disconnected-containers)
+
 ## Features
 
 | Feature | Description |
